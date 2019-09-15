@@ -1,0 +1,5 @@
+exposed_network: tor-privoxy
+exposed_port: 8118
+
+tor_replicas: 1
+privoxy_replicas: 1

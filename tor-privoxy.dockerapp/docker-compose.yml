@@ -1,0 +1,25 @@
+version: "3.6"
+services:
+  tor:
+    image: jdrouet/tor-proxy
+
+    networks:
+      - internal
+
+    deploy:
+      replicas: ${tor_replicas}
+
+  privoxy:
+    image: jdrouet/privoxy
+
+    networks:
+      - internal
+
+    ports:
+      - ${exposed_port}:8118
+
+    deploy:
+      replicas: ${privoxy_replicas}
+
+networks:
+  internal:
